@@ -5,10 +5,10 @@ OCR原始结果/
 招生计划OCR结果.json
 deepseek_json_20260521_149768.json
 
+# Archives and backups
+*.zip
+*副本*
+
 # OS files
 Thumbs.db
 Desktop.ini
-*.zip
-*副本*
-招生计划OCR结果.json
-deepseek_json_20260521_149768.json
