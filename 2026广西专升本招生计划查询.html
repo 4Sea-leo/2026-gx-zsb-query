@@ -88,7 +88,7 @@ tr:hover{background:#f8f9ff}
 <body>
 <div class="container">
 <h1>🎓 2026年广西专升本招生计划查询系统</h1>
-<p class="subtitle">数据来源：广西招生考试院 | 共 <span id="totalNum">0</span> 条招生计划 | <span id="totalSchool">0</span> 所院校</p>
+<p class="subtitle">数据来源：广西招生考试院 | 共 <span id="totalNum">0</span> 条招生计划 | <span id="totalSchool">0</span> 所院校<br><span style="color:#c62828;font-weight:600">⚠️ 仅供参考，非官方录取承诺</span></p>
 
 <div class="stats-bar">
   <div class="stat-card"><div class="num" id="s1">0</div><div class="label">第一梯队</div></div>
@@ -172,7 +172,7 @@ tr:hover{background:#f8f9ff}
 </div>
 
 <div class="tip">
-  <strong>💡 智能搜索：</strong>直接输入你的<strong>专科专业名</strong>（如"护理""药学""学前教育"），系统会自动匹配可报考的本科院校和专业。第一梯队院校竞争激烈但学历含金量高；第三、四梯队院校计划多、录取概率大。建议"冲稳保"策略：1-2个冲刺、2-3个稳妥、1-2个保底。
+  <strong>💡 智能搜索：</strong>直接输入你的<strong>专科专业名</strong>（如"护理""药学""学前教育"），系统会自动匹配可报考的本科院校和专业。第一梯队院校竞争激烈但学历含金量高；第三、四梯队院校计划多、录取机会评分大。建议"冲稳保"策略：1-2个冲刺、2-3个稳妥、1-2个保底。
 </div>
 
 <div id="matchInfo"></div>
@@ -305,12 +305,12 @@ tr:hover{background:#f8f9ff}
       </div>
     </div>
     <div class="tip">
-      <strong>💡 使用方法：</strong>在"详细计划表"中点击<strong>「+加入」</strong>添加志愿（最多10个）。输入排名后系统自动计算录取概率。
+      <strong>💡 使用方法：</strong>在"详细计划表"中点击<strong>「+加入」</strong>添加志愿（最多10个）。输入排名后系统自动计算录取机会评分。
       <br><strong>⚠️ 文理区分：</strong>文科/理科专业分开招生，系统会提示方向是否匹配。
       <br><strong>🏥 医药卫生大类：</strong>对专科专业有严格限制，请先搜索你的专科专业确认可报考范围。
     </div>
     <div style="background:#fff;border-radius:12px;padding:15px;margin-top:15px;box-shadow:0 2px 8px rgba(0,0,0,0.08)" id="recommendSection">
-      <h4 style="margin-bottom:10px;color:#1a1a2e">🔮 按大类推荐：选大类 + 写排名，按梯度展示各专业录取概率</h4>
+      <h4 style="margin-bottom:10px;color:#1a1a2e">🔮 按大类推荐：选大类 + 写排名，按梯度展示各专业录取机会评分</h4>
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:end">
         <div>
           <label style="font-weight:600;font-size:0.85em">📂 选择专业大类：</label><br>
@@ -325,7 +325,7 @@ tr:hover{background:#f8f9ff}
           </select>
         </div>
         <div>
-          <button class="btn" style="background:#9c27b0;color:#fff;padding:8px 20px;font-size:0.95em" onclick="renderRecommend()">🎯 查看录取概率</button>
+          <button class="btn" style="background:#9c27b0;color:#fff;padding:8px 20px;font-size:0.95em" onclick="renderRecommend()">🎯 查看录取机会评分</button>
         </div>
         <span style="font-size:0.8em;color:#999">选择大类后按梯度展示；医药大类可选细分专科精准计算</span>
       </div>
@@ -359,7 +359,7 @@ tr:hover{background:#f8f9ff}
         <li><strong>退役大学生士兵</strong>和<strong>原建档立卡户</strong>有单独招生计划，竞争相对较小</li>
         <li>学费差距较大：公办3800-7000元/年，民办可达15000-20000元/年</li>
         <li>注意校区位置，部分院校有多个校区</li>
-        <li>关注招生计划数，计划越多录取概率越大</li>
+        <li>关注招生计划数，计划越多录取机会评分越大</li>
       </ul>
       
       <h4 style="color:#4361ee;margin:15px 0 8px">四、2026年关键时间节点</h4>
@@ -777,7 +777,7 @@ function renderRecommend() {
     h += '</div>';
 
     h += '<div style="overflow-x:auto"><table style="font-size:0.82em"><thead><tr>';
-    h += '<th>#</th><th>梯队</th><th>办学</th><th>院校</th><th>本科专业</th><th>类型</th><th>文理</th><th>计划</th><th>录取概率</th><th>建议</th><th>操作</th>';
+    h += '<th>#</th><th>梯队</th><th>办学</th><th>院校</th><th>本科专业</th><th>类型</th><th>文理</th><th>计划</th><th>录取机会评分</th><th>建议</th><th>操作</th>';
     h += '</tr></thead><tbody>';
 
     var counter = 0;
@@ -834,8 +834,8 @@ function renderRecommend() {
     h += '<strong>💡 填报建议：</strong>';
     h += '✅保底(' + highProb + '个) | 🟡稳妥(' + midProb + '个) | 🟠冲刺(' + lowProb + '个)';
     h += ' — 梯度越高的学校学历含金量越高但竞争越大，建议冲-稳-保比例 2:3:2';
-    h += '<br>📊 当前排名第' + myRank + '名在该大类中，排名越靠前录取概率越高。';
-    h += '选择心仪专业点击「<strong>+加入</strong>」即可添加到志愿列表进行综合概率分析。';
+    h += '<br>📊 当前排名第' + myRank + '名在该大类中，排名越靠前录取机会评分越高。';
+    h += '选择心仪专业点击「<strong>+加入</strong>」即可添加到志愿列表进行综合机会评分分析。';
     h += '</div>';
 
     resultDiv.innerHTML = h;
@@ -929,7 +929,7 @@ function renderApply() {
 
   var analysis = '<div style="background:#fff;border-radius:12px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,0.08)">';
   var rankInfo = myRank ? '排名：第' + myRank + '名' : '请先输入排名';
-  analysis += '<h4 style="margin-bottom:10px;color:#1a1a2e">📊 录取概率分析（' + rankInfo + ' | 总报名7万人）</h4>';
+  analysis += '<h4 style="margin-bottom:10px;color:#1a1a2e">📊 录取机会评分分析（' + rankInfo + ' | 总报名7万人）</h4>';
 
   if (!myRank) {
     analysis += '<div style="text-align:center;padding:20px;color:#999">请输入你的考试排名，系统基于7万报名人数自动计算概率</div>';
@@ -939,7 +939,7 @@ function renderApply() {
   }
 
   // Per-志愿 probability table
-  analysis += '<table style="font-size:0.82em"><thead><tr><th>志愿</th><th>院校-专业</th><th>梯队</th><th>计划数</th><th>预估报考人数</th><th>录取概率</th><th>建议</th></tr></thead><tbody>';
+  analysis += '<table style="font-size:0.82em"><thead><tr><th>志愿</th><th>院校-专业</th><th>梯队</th><th>计划数</th><th>预估报考人数</th><th>录取机会评分</th><th>建议</th></tr></thead><tbody>';
 
   var totalProb = 1; // Probability of NOT getting into any
   var bestProb = 0;
@@ -977,11 +977,11 @@ function renderApply() {
   // Overall probability
   var overallGet = 1 - totalProb;
   analysis += '<div style="margin-top:15px;padding:15px;border-radius:8px;background:' + (overallGet >= 0.8 ? '#e8f5e9' : overallGet >= 0.5 ? '#fff8e1' : '#fce4ec') + '">';
-  analysis += '<div style="font-size:1.1em;font-weight:700;margin-bottom:8px">📈 综合录取概率：' + (overallGet * 100).toFixed(1) + '%</div>';
+  analysis += '<div style="font-size:1.1em;font-weight:700;margin-bottom:8px">📈 综合录取机会评分：' + (overallGet * 100).toFixed(1) + '%</div>';
   analysis += '<div style="font-size:0.85em;color:#555">';
-  if (overallGet >= 0.9) analysis += '🟢 你的志愿配置非常好，录取概率很高！';
-  else if (overallGet >= 0.7) analysis += '🟡 录取概率较高，建议再增加1-2个保底志愿更稳妥。';
-  else if (overallGet >= 0.5) analysis += '🟠 录取概率中等，建议增加更多第三、四梯队的保底志愿。';
+  if (overallGet >= 0.9) analysis += '🟢 你的志愿配置非常好，录取机会评分很高！';
+  else if (overallGet >= 0.7) analysis += '🟡 录取机会评分较高，建议再增加1-2个保底志愿更稳妥。';
+  else if (overallGet >= 0.5) analysis += '🟠 录取机会评分中等，建议增加更多第三、四梯队的保底志愿。';
   else analysis += '🔴 录取风险较大！强烈建议增加第三、四梯队的保底志愿。';
   analysis += '</div></div>';
 
@@ -1241,7 +1241,7 @@ function onMedTabChange() {
 
   // Build results table
   var h = '<div style="margin-bottom:10px;font-size:0.85em;color:#666">共 <strong>' + matches.length + '</strong> 条招生计划，按梯队排名排列</div>';
-  h += '<table style="font-size:0.82em"><thead><tr><th>梯队</th><th>院校</th><th>本科专业</th><th>可报专科数</th><th>计划数</th><th>竞争人数</th><th>录取概率</th><th>学费</th><th>操作</th></tr></thead><tbody>';
+  h += '<table style="font-size:0.82em"><thead><tr><th>梯队</th><th>院校</th><th>本科专业</th><th>可报专科数</th><th>计划数</th><th>竞争人数</th><th>录取机会评分</th><th>学费</th><th>操作</th></tr></thead><tbody>';
 
   matches.forEach(function(d) {
     var tc = TIER_CLASSES[d.n] || 't3';
