@@ -1,0 +1,10 @@
+# Raw OCR data
+OCR原始结果/
+
+# Intermediate/working files
+招生计划OCR结果.json
+deepseek_json_20260521_149768.json
+
+# OS files
+Thumbs.db
+Desktop.ini
